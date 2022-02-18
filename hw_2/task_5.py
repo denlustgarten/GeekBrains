@@ -16,7 +16,7 @@ if __name__ == '__main__':
         if new_val <= val:
             index = ind + 1
     print(index)
-    
+
     if index == len(my_list):
         my_list.append(new_val)
     else:

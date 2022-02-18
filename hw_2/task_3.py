@@ -9,13 +9,14 @@ month_dict = {
     '9, 10, 11': 'Осень',
 }
 
+result = None
 if __name__ == '__main__':
-    month_number = input()
+    month_number = input("Введите номер месяца: ")
     for keys in month_dict.keys():
-        print(keys.split(', '))
-        if month_number in keys.split(', '):
-            print(month_dict[keys])
+        if month_number in keys.split(', '):    # использование списка присутствует🙂
+            result = month_dict[keys]
             break
-        # els    #     print('This month does not exist.')
-        #     break
-
+    if result:
+        print(f'Время года: {result}')
+    else:
+        print('This month does not exist.')

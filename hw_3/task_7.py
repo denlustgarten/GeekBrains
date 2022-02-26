@@ -4,10 +4,10 @@
 
 
 def upper_first_char(words: str) -> str:
-    new_str = ''
+    upper_words_arr = []
     for word in words.split():
-            new_str += word[0].upper() + word[1:]
-    return new_str
+        upper_words_arr.append(word[0].upper() + word[1:])
+    return ' '.join(upper_words_arr)
 
 
 if __name__ == '__main__':

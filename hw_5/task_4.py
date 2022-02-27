@@ -40,9 +40,12 @@ def translate_eng_to_rus(digit_dict: Dict[str, float]) -> Dict[str, int]:
 
 
 def write_file(filename: str, digits: Dict[str, int]) -> None:
-    with open(filename, 'w', encoding='utf-8') as f:
-        for name, dig in digits.items():
-            f.write(f'{name} — {dig}\n')
+    try:
+        with open(filename, 'w', encoding='utf-8') as f:
+            for name, dig in digits.items():
+                f.write(f'{name} — {dig}\n')
+    except IOError as e:
+        print(e)
 
 
 if __name__ == '__main__':

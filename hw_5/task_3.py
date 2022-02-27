@@ -6,9 +6,13 @@ from statistics import mean
 
 
 def read_file(filename: str) -> List[str]:
-    with open(filename, 'r', encoding='utf-8') as f:
-        employers = f.readlines()
-    return employers
+    try:
+        with open(filename, 'r', encoding='utf-8') as f:
+            employers = f.readlines()
+        return employers
+    except IOError as e:
+        print(e)
+        return []
 
 
 def list_to_dict(employers: List[str]) -> Dict[str, float]:
@@ -22,5 +26,9 @@ if __name__ == '__main__':
     salary_less_20 = [name for name, sal in emp_to_dict.items() if sal < 20000]
     print(f'Сотрудники c ЗП меньше 20к: {", ".join(salary_less_20)}')
 
-    average_salary = mean(sal for sal in emp_to_dict.values())
-    print(f'Средняя зарплата = {average_salary:.2f}')
+    if emp_to_dict:
+        average_salary = mean(sal for sal in emp_to_dict.values())
+        print(f'Средняя зарплата = {average_salary:.2f}')
+    else:
+        print('Файл либо не существует либо он пуст!')
+

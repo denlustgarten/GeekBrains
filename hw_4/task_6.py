@@ -20,19 +20,20 @@ def int_gen(start_: int, stop_: int):
 
 
 def repeat_iter(arr, stop_: int):
-    for num in cycle(arr):
+    for ind, num in enumerate(cycle(arr)):
         yield num
-        if arr.index(num) == stop_:
+        if ind == stop_:
             break
 
 
-# generator 1
-start = 3
-stop = 10
-int_generator = int_gen(start, stop)
-print(list(int_generator))
+if __name__ == '__main__':
+    # generator 1
+    start = 3
+    stop = 15
+    int_generator = int_gen(start, stop)
+    print(list(int_generator))
 
-# generator 1
-sequence = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
-rep_iter = repeat_iter(sequence, stop_=10)
-print(list(rep_iter))
+    # generator 1
+    sequence = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
+    rep_iter = repeat_iter(sequence, stop_=30)
+    print(list(rep_iter))

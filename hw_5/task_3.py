@@ -11,8 +11,8 @@ def read_file(filename: str) -> List[str]:
     return employers
 
 
-def list_to_dict(employers: List[str]) -> Dict[str, int]:
-    emp_dict = {person[0]: int(person[1]) for person in [val.strip().split() for val in employers]}
+def list_to_dict(employers: List[str]) -> Dict[str, float]:
+    emp_dict = {person[0]: float(person[1]) for person in [val.strip().split() for val in employers]}
     return emp_dict
 
 

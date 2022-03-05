@@ -13,5 +13,3 @@ else:
     k = (y1 - y2) / (x1 - x2)
     b = y1 - k * x1
     print(f'y = {k}x + ({b})')
-
-

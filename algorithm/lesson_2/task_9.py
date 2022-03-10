@@ -21,6 +21,6 @@ def max_sum_digit(max_dig_num: int, max_dig_sum: int) -> (int, int):
         return max_dig_num, max_dig_sum
 
 
-print('Программа находит число с наибольшей суммой чисел. Для завершения программы введите 0')
+print('Программа находит число с наибольшей суммой цифр. Для завершения программы введите 0')
 max_digit_num, max_digit_sum = max_sum_digit(0, 0)
 print(f'Число с максимальной суммой цифр: {max_digit_num} \nСумма цифр этого числа: {max_digit_sum}')

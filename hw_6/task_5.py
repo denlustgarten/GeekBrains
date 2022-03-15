@@ -10,7 +10,7 @@
 
 import os
 
-print('GeekBrains homework #6, task 5')
+"""установка модуля для рисования: pip install image2ascii"""
 
 
 class Stationery:

@@ -4,6 +4,4 @@
 count_dict = {}
 for div in range(2, 10):
     count_dict[div] = 99 // div
-
-for key, val in count_dict.items():
-    print(f'{key}: {val}')
+    print(f'{div}: {count_dict[div]}')

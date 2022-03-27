@@ -1,0 +1,7 @@
+The mechanics of cached_property() are somewhat different from property().
+A regular property blocks attribute writes unless a setter is defined.
+In contrast, a cached_property allows writes.
+The cached_property decorator only runs on lookups and only when an attribute of the same name doesn’t exist.
+When it does run, the cached_property writes to the attribute with the same name. Subsequent attribute
+reads and writes take precedence over the cached_property method and it works like a normal attribute.
+The cached value can be cleared by deleting the attribute. This allows the cached_property method to run again.

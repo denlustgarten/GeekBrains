@@ -133,17 +133,17 @@ if __name__ == '__main__':
     plt.show()
 
     sequence = [randint(MIN_ITEM, MAX_ITEM) for _ in range(1_000_000)]
-    cProfile.run('dig_count_0(seq, 5)')
-    cProfile.run('dig_count_1(seq, 5)')
-    cProfile.run('dig_count_2(seq, 5)')
-    cProfile.run('dig_count_3(seq, 5)')
+    cProfile.run('dig_count_0(sequence, 5)')
+    cProfile.run('dig_count_1(sequence, 5)')
+    cProfile.run('dig_count_2(sequence, 5)')
+    cProfile.run('dig_count_3(sequence, 5)')
 
 
 
 
 
 '''
-Результаты измерений
+Результаты измерений:
 val_num = (10, 100, 300, 600, 1000, 2000)
 
 dig_count_0(): arr length:     10, time: 0.0010352999961469322

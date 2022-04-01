@@ -10,11 +10,11 @@ from itertools import zip_longest
 
 class Matrix:
     def __init__(self, matrix_):
-        self.matrix = deepcopy(matrix_)
+        self.__matrix = deepcopy(matrix_)
 
     def __str__(self):
         result_str = ''
-        for string in self.matrix:
+        for string in self.__matrix:
             for val in string:
                 result_str += f'{val:>4}'
             result_str += '\n'
@@ -22,12 +22,12 @@ class Matrix:
 
     @property
     def matrix_size(self):
-        return len(self.matrix), len(self.matrix[0])
+        return len(self.__matrix), len(self.__matrix[0])
 
     def __add__(self, other):
         if self.matrix_size == other.matrix_size:
             sum_matrix = []
-            for line_m1, line_m2 in zip(self.matrix, other.matrix):
+            for line_m1, line_m2 in zip(self.__matrix, other.__matrix):
                 new_line = [sum(nums) for nums in zip_longest(line_m1, line_m2)]
                 sum_matrix.append(new_line)
             return Matrix(sum_matrix)

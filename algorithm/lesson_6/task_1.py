@@ -17,12 +17,13 @@ def my_size(data, sum_mem=0):
 def memory_expended(func):
     def wrapper():
         sum_memory = 0
-        var_arr = func()
+        *func_return, var_arr = func()
 
         for var in var_arr.values():
             sum_memory += my_size(var)
 
         print(f'Function:"{func.__name__}", size={sum_memory}')
+        return func_return
     return wrapper
 
 
@@ -30,8 +31,6 @@ def memory_expended(func):
 def test():
     a = 1
     b = 1000
-    print(sys.getsizeof(a))
-    print(sys.getsizeof(b))
     c = [0, 5, 6, 3, 5, 4, 5, 6, 3, 5]
     print(sys.getsizeof(c))
     return locals()

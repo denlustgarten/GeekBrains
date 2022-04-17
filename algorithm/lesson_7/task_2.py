@@ -43,5 +43,5 @@ def merge_sort(array: List) -> List:
 
 if __name__ == '__main__':
     matrix = [uniform(MIN_ITEM, MAX_ITEM) for _ in range(SIZE_ARR)]
-    print(tuple(matrix))
+    print(matrix)
     print(merge_sort(matrix))
